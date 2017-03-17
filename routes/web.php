@@ -47,6 +47,17 @@ Route::group(array("namespace"=>"Front"), function() {
             "as"=> "notes",
             "uses"=>"NotesController@index"
         ));
+    Route::get("noteplus",
+        array(
+            "as"=> "notesplus",
+            "uses"=>"NotesController@noteplus"
+        ));
+    Route::get("notemoins",
+        array(
+            "as"=> "notesmoins",
+            "uses"=>"NotesController@notemoins"
+        ));
 
     Route::resource("profil", "ProfilsController");
+    Route::resource("utilisateur","UsersController");
 });

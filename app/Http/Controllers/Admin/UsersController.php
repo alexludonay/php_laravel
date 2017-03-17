@@ -104,6 +104,7 @@ class UsersController extends Controller
 
 
 
+
         if($status_create)
         {
             return redirect(route('users.index', $user_update))->with("success", "L'utilisateur à été modifié");
@@ -130,4 +131,16 @@ class UsersController extends Controller
             return redirect()->back()->with("danger","L'utilisateur n'a pas été supprimé");
         }
     }
+    public function plusnote($id){
+        $user_update=User::findOrFail($id);
+        $noteplusun = $user_update->update(array(
+            'note'=>$user_update->note+1
+        ));
+    }
+    public function moinsnote($id){
+        $user_update=User::findOrFail($id);
+        $notemoinsun = $user_update->update(array(
+            'note'=>$user_update->note+1));
+    }
+
 }

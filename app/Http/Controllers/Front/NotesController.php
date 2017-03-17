@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,8 +15,8 @@ class NotesController extends Controller
      */
     public function index()
     {
-
-        return view("front/notes/index" , compact("notes"));
+        $users = User::get();
+        return view("front/notes/index" , compact("users"));
     }
 
     /**
@@ -83,4 +84,17 @@ class NotesController extends Controller
     {
         //
     }
+
+    public function noteplus($id){
+        $user_update=User::findOrFail($id);
+        $noteplusun = $user_update->update(array(
+            'note'=>$user_update->note+1
+        ));
+    }
+    public function notemoins($id){
+        $user_update=User::findOrFail($id);
+        $notemoinsun = $user_update->update(array(
+            'note'=>$user_update->note+1));
+    }
+
 }
