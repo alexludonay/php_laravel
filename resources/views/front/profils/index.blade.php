@@ -1,4 +1,6 @@
+@extends("front/default")
 <body>
+
 <div class="profile-title">
     @foreach($users as $user)
     <h1>Profil de {{ $user->prenom }}</h1>
@@ -23,5 +25,5 @@
 </div>
 </body>
 </html>
-@extends("front/default")
+
 
