@@ -19,17 +19,9 @@
                     <h1>Bienvenue sur How To Survive</h1>
                     <hr>
                 </div>
-                <div class="col-sm-8 col-sm-offset-2 text-center texte_accueil">
-                    <p>On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 text-center voir_classement">
-                    <h2>Voir les classements :</h2>
-                </div>
-                <div class="col-sm-12 text-center lien_classement">
-                    <a class="bordure2" href="#">Étudiants</a>
-                    <a class="bordure2" href="#">Professeurs</a>
+                <div class="col-sm-12 text-center texte_accueil">
+                    <p>How To Survive, est un espace qui regroupe, les étudiants et les professeurs d'une classe. Le principe, faire un classement des élèves <br> et un classement pour les proffesseurs.<br>
+                    Basé sur les notes des élèves et les note des camarade pour élire le meilleur, etc...</p>
                 </div>
             </div>
         </div>
