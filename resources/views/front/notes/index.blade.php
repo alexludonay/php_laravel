@@ -12,9 +12,9 @@
             </div>
     </div>
     <div>
-        <li><a href="{{ route("notesplus",$user->id)}}"><input type="button" value="Plus" class="btn-primary"/></a></li>
-        <li><a href="{{ route("notesmoins",$user->id)}}"><input type="button" value="Moins" class="btn-primary"/></a></li>
-        <li><a> -</a></li>
+        <li><a href="{{ route("notesplus",$user)}}"><input type="button" value="Plus" class="btn-primary"/></a></li>
+        <li><a href="{{ route("notesmoins",$user)}}"><input type="button" value="Moins" class="btn-primary"/></a></li>
+
     </div>
 
 

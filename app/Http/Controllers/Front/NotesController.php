@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class NotesController extends Controller
 {
@@ -18,83 +19,20 @@ class NotesController extends Controller
         $users = User::get();
         return view("front/notes/index" , compact("users"));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    
 
     public function noteplus($id){
+
         $user_update=User::findOrFail($id);
-        $noteplusun = $user_update->update(array(
-            'note'=>$user_update->note+1
-        ));
+        $noteactuel = $user_update->note;
+        DB::update('update users set note = ?+1 where id = ?', [$noteactuel,$id]);
+        return redirect(route("notes"));
     }
     public function notemoins($id){
         $user_update=User::findOrFail($id);
-        $notemoinsun = $user_update->update(array(
-            'note'=>$user_update->note+1));
+        $noteactuel = $user_update->note;
+        DB::update('update users set note = ?-1 where id = ?', [$noteactuel,$id]);
+        return redirect(route("notes"));
     }
 
 }

@@ -47,12 +47,12 @@ Route::group(array("namespace"=>"Front"), function() {
             "as"=> "notes",
             "uses"=>"NotesController@index"
         ));
-    Route::get("noteplus",
+    Route::get("noteplus/{id}",
         array(
             "as"=> "notesplus",
             "uses"=>"NotesController@noteplus"
         ));
-    Route::get("notemoins",
+    Route::get("notemoins/{id}",
         array(
             "as"=> "notesmoins",
             "uses"=>"NotesController@notemoins"
