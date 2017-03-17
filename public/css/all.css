@@ -17,6 +17,10 @@ nav a:hover {
 .nav>li>a:focus, .nav>li>a:hover {
     background: none !important;
 }
+.menu {
+    margin-top: 13px;
+    margin-right: 7px;
+ }
 .bordure {
     border: solid 1px;
     border-radius: 10px;
@@ -24,6 +28,9 @@ nav a:hover {
 .ajouter_utilisateur {
     padding-left: 40px;
     margin-bottom: 10px;
+}
+.titre_accueil {
+    margin-top: 12vh;
 }
 .titre_accueil h1 {
     color: #ffffff;
@@ -38,6 +45,23 @@ nav a:hover {
     color: #ffffff;
     font-family: 'Lato', sans-serif;
     font-size: 15px;
+    margin-top: 7vh;
+}
+.voir_classement {
+    color: #ffffff;
+    margin-top: 4vh;
+}
+.bordure2 {
+    padding: 7px;
+    border: solid 1px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    color: #ffffff ;
+    margin: 0 30px 0 30px;
+}
+.lien_classement {
+    margin-top: 30px;
 }
 .enregistrement hr {
     padding-bottom: 30px;
@@ -79,3 +103,4 @@ nav a:hover {
     text-decoration: none;
     color: #ffffff;
 }
+
