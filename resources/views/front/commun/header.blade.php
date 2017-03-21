@@ -7,6 +7,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         {!! Html::style("css/all.css") !!}
+        {!! Html::style("css/font-awesome.min.css") !!}
     </head>
     <body>
     <header>

@@ -25,7 +25,7 @@
                    </label>
                </div>
                <div class="col-xs-10 col-sm-offset-1">
-                   <input type="submit" class="btn btn-primary btn-block btn-flat" value="Se connecter"/>
+                   <input style="background-color: #3e62e4" type="submit" class="btn btn-primary btn-block btn-flat" value="Se connecter"/>
                </div>
                <div class="col-sm-12 text-center pas-inscrit">
                    <a href="#">Pas encore de compte ? Inscrivez-vous</a>

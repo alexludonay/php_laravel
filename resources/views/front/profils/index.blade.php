@@ -1,29 +1,11 @@
-@extends("front/default")
-<body>
-
-<div class="profile-title">
+@include('front.commun.header')
     @foreach($users as $user)
-    <h1>Profil de {{ $user->prenom }}</h1>
-</div>
-<div class="profil">
-    <div class="col-md-2">
-        <img src="../../assets/utilisateur-defaut.jpg" alt="photo">
-        <div>
-            <h4>Notes :</h4>
-            <ul>
-                <li>{{ $user->note }}</li>
-            </ul>
-        </div>
-    </div>
-    <div class="col-md-7">
-        <p>{{ $user->nom , $user->prenom }}</p>
+    <div class="col-md-4 col-sm-12 text-center">
+        <div class="image"></div>
+        <h3>{{ $user->prenom }}</h3>
+        <h4>{{ $user->nom }}</h4>
+        <p>Note : {{ $user->note }}</p>
         <a href="mailto:{{ $user->mail }}">{{ $user->mail }}</a>
-        <p>Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
 
     @endforeach
-</div>
-</body>
-</html>
-
-
