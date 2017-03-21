@@ -40,7 +40,7 @@ class LoginsController extends Controller
         }
         if(Auth::check()){
             
-            return redirect(route('users.index'))->with("success","Vous êtes connecter");
+            return redirect(route(''))->with("success","Vous êtes connecter");
         }
         else{
             return redirect(route('login'))->with("danger","La combinaison Nom de compte mot de passe est incorrect.");
