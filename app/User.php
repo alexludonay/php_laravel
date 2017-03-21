@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class User extends Authenticatable
 {
     protected $table = 'users';
-    protected $fillable = array("id", "nom", "prenom", "email", "login", "password", "role","note");
+    protected $fillable = array("id", "nom", "prenom", "email", "password", "role","note");
     protected $hidden = array('password');
     public static $rules = array(
         "create" => array(

@@ -9,10 +9,9 @@
                     <hr>
                 </div>
                 <div class="box-body">
-                    {!! BootForm::open()->action(route("users.store")) !!}
+                    {!! BootForm::open()->action(route("utilisateur.store")) !!}
                     {!! BootForm::text("Nom","nom")->placeholder("Entrez le nom de l'utilisateur")->required(true)!!}
                     {!! BootForm::text("Prénom","prenom")->placeholder("Entrez le prénom de l'utilisateur")->required(true)!!}
-                    {!! BootForm::date('Date de Naissance',"birthday")->placeholder("Entrez la date de naissance de l'utilisateur") !!}
                     {!! BootForm::email("Email","email")->placeholder("Entrez l'email de l'utilisateur")->required(false)!!}
                     {!! BootForm::password("Mot de passe","password")->placeholder("Entrez le nom de l'utilisateur")->required(true)!!}
                     {!! BootForm::password("Confirmer le mot de passe","password_confirmation")->placeholder("Entrez de nouveau le mot de passe")->required(true)!!}

@@ -358,6 +358,14 @@ class CreateStudient extends Seeder
             'password' => '$2y$10$DW1sKB560rN6j0UEKZB6nOV7ausvs1Ger4JZnxCw7QkoGwsqmC0jO',
 
         ]);
+        DB::table('users')->insert([
+            'nom' => "test",
+            'prenom' => 'test',
+            'email' => 'test@test.fr',
+            'password' => 'test',
+            'role' => 'admin',
+
+        ]);
 
     }
 }
