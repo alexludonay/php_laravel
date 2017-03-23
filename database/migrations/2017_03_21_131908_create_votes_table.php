@@ -17,7 +17,7 @@ class CreateVotesTable extends Migration
             $table->engine = "InnoDB";
             $table->increments('id');
             $table->integer("user_id")->unsigned();
-            $table->integer("voted_id");
+            $table->integer("voted_id")->unsigned();
             $table->integer("value");
             $table->timestamps();
             $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade")->onUpdate("cascade");

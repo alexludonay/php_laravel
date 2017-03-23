@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Front;
 use App\User;
-
 use App\Vote;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class NotesController extends Controller
 {
@@ -53,6 +51,7 @@ class NotesController extends Controller
         $c_user = Auth::user();
         $notemoinsun = $user_update->update(array(
             'note' => $user_update->note - 1));
+        dd($c_user);
         $vote = $c_user->vote()->create(array(
             'user_id' => $id,
             'voted_id' => $c_user->id,
@@ -60,16 +59,22 @@ class NotesController extends Controller
         ));
         return redirect(route("notes"));
     }
-        
-        public function resetnote($id){
-            $c_user= Auth::user();
-            $user = User::findOrFail($id);
 
-            $vote = Vote::where("user_id", $user->id)->where("voted_id", $c_user->id)->delete();
+    public function resetnote($id){
+        $user_update = User::findOrFail($id);
+        $c_user= Auth::user();
+        $user = User::findOrFail($id);
+        $value = Vote::where("user_id", $user->id)->where("voted_id", $c_user->id)->first();
+        $v = $value->value;
+        $user_update->update(array(
+                'note' => ($user_update->note - $v))
+        );
+        $vote = Vote::where("user_id", $user->id)->where("voted_id", $c_user->id)->delete();
 
-        }
-    
-    
-    
-    
+        return redirect(route("notes"));
+    }
+
+
+
+
 }
