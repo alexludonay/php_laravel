@@ -57,6 +57,16 @@ Route::group(array("namespace"=>"Front"), function() {
             "as"=> "notesmoins",
             "uses"=>"NotesController@notemoins"
         ));
+    Route::get("noteegal/{id}",
+        array(
+            "as"=> "noteegal",
+            "uses"=>"NotesController@noteegal"
+        ));
+    Route::get("resetnote/{user}",
+        array(
+            "as"=> "resetnote",
+            "uses"=>"NotesController@resetnote"
+        ));
 
     Route::resource("profil", "ProfilsController");
     Route::resource("utilisateur","UsersController");
