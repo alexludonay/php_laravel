@@ -178,9 +178,18 @@ footer {
 }
 
 /* PAGE PROFIL PERSO */
+.centre_image_profil {
+    margin-top: 50px;
+   position: fixed;
+}
+.page_profil hr {
+    background-color: #d5374f;
+    padding-bottom: 1px;
+
+}
 .image_profil_seul {
-    width: 250px;
-    height: 350px;
-    background: url("../img/jason.jpg") no-repeat no-repeat;
-    border: solid 1px;
+    width: 230px;
+    height: 270px;
+    background-color: grey;
+    border-radius: 20px;
 }

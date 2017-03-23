@@ -10,7 +10,6 @@
             <th>modifier</th>
             <th>Nom</th>
             <th>Prénom</th>
-            <th>tag</th>
             <th>commentaire</th>
 
         </tr>
@@ -23,9 +22,6 @@
            <td> {{$user->nom}} </td>
                 <td>{{$user->prenom}} </td>
 
-            @foreach($user->tags as $tag)
-                <td>{{$tag->nom}}</td>
-            @endforeach
             @foreach($user->commentaires as $commentaire)
                 <td> {{$commentaire->content}} </td>
             @endforeach
