@@ -31,9 +31,4 @@
             {!! BootForm::close() !!}
         </div>
     </div>
-    </div>
-
-    </div>
-
-
 @stop

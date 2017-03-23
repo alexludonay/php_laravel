@@ -1,12 +1,12 @@
-@include('front.commun.header')
+@include('default')
     @foreach($users as $user)
-<body style="background: #f5f5f5;">
+<body>
 <div class="container classement">
     <div class="row notes">
         <div class="col-md-2 image">
         </div>
         <div class="col-md-6 col-sm-6 etudiant-classement">
-            <h3>{{ $user->prenom }}</h3>
+            <a href="#" >{{ $user->prenom }}</a>
             <h4>{{$user->nom }}</h4>
         </div>
         <div style="margin-top: 10px" class="col-md-2 col-sm-6 text-center note-classement">
