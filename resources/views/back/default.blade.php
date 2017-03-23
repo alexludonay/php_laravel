@@ -1,4 +1,4 @@
-@include('front.commun.header')
+@include('default')
 <body>
 
 <div class="wrapper">

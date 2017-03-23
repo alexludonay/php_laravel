@@ -1,21 +1,26 @@
-
-body {
+/*  LES BODY - ACCUEIL ET AUTRES PAGES*/
+.body-home {
     width: 100%;
     background: url("../img/fond3.jpg") no-repeat no-repeat;
 }
+.body-away {
+    background: #efefef;
+}
+
+/* FOOTER */
 footer {
     background-color: #1f648b;
     height: 200px;
     margin-top: 20px;
 }
-nav a {
-    color: #ffffff;
-}
-nav a:hover {
-    color: #FF0008 ;
-}
+/* LES MENUS - ACCEUIL ET AUTRES PAGES*/
+
+/* Menu page d'accueil : */
 .nav>li>a:focus, .nav>li>a:hover {
     background: none !important;
+}
+.hov a:hover {
+    color: #FF0008 !important;
 }
 .menu {
     margin-top: 13px;
@@ -25,6 +30,16 @@ nav a:hover {
     border: solid 1px;
     border-radius: 10px;
 }
+
+/* Menu autres page :*/
+.ma-navbar {
+    background-color: #0c2a4e;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+/* PAGE D'ACCUEIL */
 .ajouter_utilisateur {
     padding-left: 40px;
     margin-bottom: 10px;
@@ -63,28 +78,35 @@ nav a:hover {
 .lien_classement {
     margin-top: 30px;
 }
+.lien_classement a:hover {
+    text-decoration: none;
+    color: #FF0008;
+}
 .enregistrement hr {
     padding-bottom: 30px;
 }
 .enregistrement {
-    color: #ffffff;
+    color: #0c2a4e;
 }
 .bouton {
-    color: #000000;
-    background-color: #e8eaf6;
-}
-.se-connecter {
-    margin-top: 170px;
     color: #ffffff;
+    background-color: #0c2a4e;
+
+}/* PAGE SE CONNECTER */
+.se-connecter {
+    margin-top: 120px;
+    color: #0c2a4e;
     font-size: 45px;
     font-family: 'Lato', sans-serif;
 }
 .se-connecter hr {
-    padding-bottom: 30px;
+    background-color: #0c2a4e;
+    margin-bottom: 30px;
+    padding-bottom: 1px;
     width: 400px;
 }
 .la_connexion {
-    color: #ffffff;
+    color: #0c2a4e;
 }
 .la_connexion h4 {
     margin-bottom: 20px;
@@ -101,6 +123,64 @@ nav a:hover {
 }
 .pas-inscrit a {
     text-decoration: none;
-    color: #ffffff;
+    color: #0c2a4e;
+}
+.classement {
+     margin-top: 10px;
+ }
+
+/* PAGE DES NOTES */
+.notes {
+    border: solid 1px;
+    margin-bottom: 5px;
+    height: 100px;
+}
+.notes li {
+    list-style: none;
+}
+.note-classement {
+    border-right: solid 1px;
+    border-left: solid 1px;
+}
+.etudiant-classement {
+    padding-left: 30px;
+    margin-top: 7px;
+    border-left: solid 1px;
+}
+.etudiant-classement a {
+    text-decoration: none;
+    color: #0c2a4e;
+    font-size: 25px;
+    font-weight: bold;
+}
+.image {
+    width: 100px;
+    height: 90px;
+    background: url("../img/man.png") no-repeat no-repeat;
+    margin: 3px 15px 0px 15px;
 }
 
+/* PAGE TOUT LES PROFILS */
+.profil-utilisateurs {
+    color: #0c2a4e;
+    margin: 30px 0px 30px 0px;
+}
+.profil-utilisateurs a {
+    text-decoration: none;
+    font-size: 27px;
+    font-weight: bold;
+    color: #0c2a4e;
+}
+.image_profil {
+    width: 100px;
+    height: 100px;
+    background: url("../img/man.png") no-repeat no-repeat;
+}
+
+/* PAGE PROFIL PERSO */
+.image_profil_seul {
+    width: 250px;
+    height: 350px;
+    background: url("../img/jason.jpg") no-repeat no-repeat;
+    border: solid 1px;
+}
