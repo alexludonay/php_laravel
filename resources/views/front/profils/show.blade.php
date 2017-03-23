@@ -1,51 +1,35 @@
 @include("default")
-<div class="container">
-    <div class="row">
+<div class="container page_profil">
+    <div class="row centre_image_profil text-center">
         <div class="col-md-12 image_profil_seul"></div>
-        <h2>Profil de {{ $user->prenom }}</h2>
+        <h5 style="margin-top: 290px;">Profil de {{ $user->prenom }}</h5>
     </div>
     <div class="row">
-        <div class="col-md-10">
-           <h4>Description</h4>
+        <div class="col-md-12 text-center">
+            <h2>Profil de {{ $user->prenom }}</h2>
+        </div>
+    </div>
+    <div style="margin-top: 50px;" class="row">
+        <div class="col-md-6 col-md-offset-3">
+           <h4>Informations :</h4>
             <hr>
         </div>
-        <div class="col-md-10">
-            <h5>{{ $user->prenom, $user->nom }}</h5>
-            <p>Email : {{$user->mail }}</p>
-            Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-
-<body>
-<div class="profile-title">
-    @if (Auth::user()->id == $user->id)
-       <li><a href="{!! route("profil.edit", $user->id) !!}" class="bordure hov">Modifier</a></li>
-        @endif
-        <h1>Profil de {{ $user->prenom }}</h1>
-</div>
-<div class="profil">
-    <div class="col-md-2">
-        <img src="../../assets/utilisateur-defaut.jpg" alt="photo">
-        <div>
-            <h4>Notes :</h4>
-            <ul>
-                <li>{{ $user->note }}</li>
-            </ul>
-
-        </div>
     </div>
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-6 col-md-offset-3">
+            <h5>Nom de l'étudiant :  {{ $user->prenom }}</h5>
+            <h5>Prénom de l'étudiant :  {{ $user->nom }}</h5>
+            <h5>Mail de l'étudiant :  {{$user->mail }}</h5>
+            <br>
+            <h4>Description :</h4>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
             @if (Auth::user()->id == $user->id)
-                <a href="{!! route("profil.edit", $user->id) !!}" class="bordure hov">Modifier</a>
+                <a href="{!! route("profil.edit", $user->id) !!}">Modifier</a>
             @endif
         </div>
     </div>
-
-
-</div>
-
-
-</div>
 
 @if (Auth::guest())
     <p>Veuillez vous connecter pour pouvoir laisser un commentaire</p>
@@ -53,7 +37,7 @@
 
 
 
-    <div class="box-body col-md-6">
+    <div class="col-md-6 col-md-offset-3">
         {!! BootForm::open()->action(route("commentaires.store")) !!}
         {!! BootForm::textarea("Commentaire","content")->placeholder("Votre commentaire : ") !!}
         {!! BootForm::hidden("auteur")->value(Auth::user()->nom) !!}
@@ -84,6 +68,5 @@
         @endif
     @endif
 @endforeach
-</body>
-</html>
+
 

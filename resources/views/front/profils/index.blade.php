@@ -5,7 +5,6 @@
         <a href="#" >{{ $user->prenom }}</a>
         <h4>{{ $user->nom }}</h4>
         <p>Note : {{ $user->note }}</p>
-        <a href="mailto:{{ $user->mail }}">{{ $user->mail }}</a>
     </div>
 
     @endforeach
