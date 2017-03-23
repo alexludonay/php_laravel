@@ -193,3 +193,20 @@ footer {
     background-color: grey;
     border-radius: 20px;
 }
+
+
+
+.un{
+    -webkit-box-shadow: 1px 1px 60px 10px #FFD905;
+    box-shadow: 1px 1px 60px 10px #FFD905;
+}
+
+.deux{
+    -webkit-box-shadow: 1px 1px 60px 10px #A8A8A8;
+    box-shadow: 1px 1px 60px 10px #A8A8A8;
+}
+
+.trois{
+    -webkit-box-shadow: 1px 1px 60px 10px #965A38;
+    box-shadow: 1px 1px 60px 10px #965A38;
+}

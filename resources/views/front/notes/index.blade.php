@@ -3,9 +3,18 @@
 
 @include('default')
 
-    @foreach($users as $user)
-<body>
-<div class="container classement">
+    @foreach($users as $key => $user)
+<div>{{$key+1}}</div>
+
+@if ($key==0)
+    <div class="container classement un">
+@elseif($key==1)
+    <div class="container classement deux">
+@elseif ($key==2)
+    <div class="container classement trois">
+@else
+    <div class="container classement">
+    @endif
     <div class="row notes">
         <div class="col-md-2 image">
         </div>
@@ -42,6 +51,6 @@
 
 @endforeach
 
-</div>
-</body>
+
+
 
