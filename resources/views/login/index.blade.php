@@ -1,7 +1,6 @@
-@extends('back.default')
-@section('content')
-    {!! Html::style("css/all.css") !!}
-   {!! BootForm::open()->action(route("connexion")) !!}
+@include('default')
+
+{!! BootForm::open()->action(route("connexion")) !!}
    <div class="container">
        <div class="row">
            <div class="col-sm-12 col-md-12 text-center se-connecter">
@@ -16,8 +15,8 @@
                    <input type="text" class="form-control" placeholder="Votre email" name="email" value="{{ old("email") }}"/>
                </div>
                <div class="form-group has-feedback connexion_mdp">
-                   <h4>Entrez votre mote de passe</h4>
-                   <input type="password" class="form-control" placeholder="Mote de passe" name="password"/>
+                   <h4>Entrez votre mote de passe :</h4>
+                   <input type="password" class="form-control" placeholder="Votre mot de passe" name="password"/>
                </div>
                <div class="col-sm-12 checkbox_souvenir">
                    <label>
@@ -34,5 +33,4 @@
        </div>
        {!! BootForm::close() !!}
    </div>
-@endsection
 

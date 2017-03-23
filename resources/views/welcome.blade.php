@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-@include("front.commun.header")
+@include("default")
 <html lang="fr">
     <head>
         {!! Html::style("css/all.css") !!}
@@ -28,7 +28,7 @@
                 <h2>Voir les classements :</h2>
             </div>
             <div class="col-sm-12 text-center lien_classement">
-                <a class="bordure2" href="#">Étudiants</a>
+                <a class="bordure2" href="{!! route("notes") !!}">Étudiants</a>
                 <a class="bordure2" href="#">Professeurs</a>
             </div>
         </div>

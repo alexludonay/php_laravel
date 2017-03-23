@@ -37,7 +37,7 @@ class UsersController extends Controller
 
         if($status_create)
         {
-            return redirect(route('utilisateur.index', $status_create))->with("succes", "Le compte est créé");
+            return redirect(route('utilisateur.index', $status_create))->with("success", "Le compte est créé");
         }
         else{
             return redirect()->back()->with("danger", "Une erreur est survenue, merci de bien vouloir recommencer")->withInput();

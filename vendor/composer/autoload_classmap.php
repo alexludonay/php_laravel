@@ -10,6 +10,7 @@ return array(
     'CreateStudient' => $baseDir . '/database/seeds/CreateStudient.php',
     'CreateTagsTable' => $baseDir . '/database/migrations/2017_01_23_154443_create_tags_table.php',
     'CreateUtilisateursTable' => $baseDir . '/database/migrations/2017_01_09_110736_create_utilisateurs_table.php',
+    'CreateVotesTable' => $baseDir . '/database/migrations/2017_03_21_131908_create_votes_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',

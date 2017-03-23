@@ -41,9 +41,9 @@ class User extends Authenticatable
     {
         return $this->hasMany("App\Commentaire","user_id","id");
     }
-    public function tags()
+    public function vote()
     {
-        return $this->belongsToMany("App\Tag","user_tag","user_id","tag_id");
+        return $this->hasMany("App\Vote","voted_id","id");
     }
     public function isAdmin()
     {
@@ -52,6 +52,18 @@ class User extends Authenticatable
             return true;
         }
         return false;
+    }
+    public function voted($user){
+        $c_user= Auth::user();
+        $c_user->load("vote");
+        $stillvote=false;
+        foreach($c_user->vote()->get() as $vote)
+        {
+            if($vote->user_id == $user->id){
+                $stillvote=true;
+            }
+        }
+        return $stillvote;
     }
 
 }

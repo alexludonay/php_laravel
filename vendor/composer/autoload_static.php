@@ -321,6 +321,7 @@ class ComposerStaticInitd804b75546bfb5741c2d36017934d40f
         'CreateStudient' => __DIR__ . '/../..' . '/database/seeds/CreateStudient.php',
         'CreateTagsTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_23_154443_create_tags_table.php',
         'CreateUtilisateursTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_09_110736_create_utilisateurs_table.php',
+        'CreateVotesTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_21_131908_create_votes_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',

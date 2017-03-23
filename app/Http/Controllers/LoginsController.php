@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\URL;
 
 class LoginsController extends Controller
 {
@@ -38,9 +39,9 @@ class LoginsController extends Controller
             Auth::attempt(array('email'=>$input["email"], 'password' => $input['password']));
 
         }
-        if(Auth::check()){
-            
-            return redirect(route(''))->with("success","Vous êtes connecter");
+        if(Auth::check())
+        {
+            return redirect( URL::asset("/") )->with("success","Vous êtes connecter");
         }
         else{
             return redirect(route('login'))->with("danger","La combinaison Nom de compte mot de passe est incorrect.");
