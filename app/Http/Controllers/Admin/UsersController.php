@@ -16,7 +16,6 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::get();
-        $users->load("tags");
         $users->load("commentaires");
         ;
 

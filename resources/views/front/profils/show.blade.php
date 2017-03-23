@@ -45,7 +45,7 @@
 </div>
 
 
-</div>
+        </div>
 
 @if (Auth::guest())
     <p>Veuillez vous connecter pour pouvoir laisser un commentaire</p>
