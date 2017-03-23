@@ -362,7 +362,7 @@ class CreateStudient extends Seeder
             'nom' => "test",
             'prenom' => 'test',
             'email' => 'test@test.fr',
-            'password' => 'test',
+            'password' => '$2y$10$ds602.avVrac/h8fImdr3.IPcVpxqeRmuKQm5Bheq0fYo75GlN4WS',
             'role' => 'admin',
 
         ]);

@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -36,7 +35,7 @@ class User extends Authenticatable
         $this-> attributes["password"] = Hash::make($value);
     }
 
-   
+
     public function commentaires()
     {
         return $this->hasMany("App\Commentaire","user_id","id");

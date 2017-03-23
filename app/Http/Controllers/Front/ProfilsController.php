@@ -21,7 +21,7 @@ class ProfilsController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
-        return view("front/profils/show"  , compact("user"));
+        return view("front/profils/show", compact("user"));
     }
 
    
