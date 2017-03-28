@@ -3,7 +3,7 @@
     <div class="row ">
         <div class="col-md-6 col-md-push-3 enregistrement">
             <div class="box-header with-border">
-                <h2 class="box-title ajouter_utilisateur">Enregistrer un nouveau utilisateur</h2>
+                <h2 class="box-title ajouter_utilisateur text-center">Enregistrer un nouvel utilisateur</h2>
                 <hr>
             </div>
             <div class="box-body">
