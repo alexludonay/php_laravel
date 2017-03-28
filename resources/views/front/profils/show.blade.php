@@ -6,7 +6,7 @@
     @endif
     <div class="row centre_image_profil text-center">
         <img src="../img/uploads/avatar/{{ $user->avatar }}" alt="{{ $user->prenom }} {{ $user->nom }}" class="image_profil_seul">
-        @if (Auth::user()->id == $user->id)
+        @if (Auth::check() and Auth::user()->id == $user->id)
             <form enctype="multipart/form-data" action="{{ route('profil.avatar') }}" method="POST">
                 <label for="">Update profile image</label>
                 <input type="file" name="avatar">
