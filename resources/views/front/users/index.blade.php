@@ -18,7 +18,7 @@
         <tr>
 
         @foreach($users as $user)
-                <td><a href="{{ route("users.edit",$user)}}"><input type="button" value="Modifier" class="btn-primary"/></a></td>
+                <td><a href="{{ route("admin.users.edit",$user)}}"><input type="button" value="Modifier" class="btn-primary"/></a></td>
            <td> {{$user->nom}} </td>
                 <td>{{$user->prenom}} </td>
 
@@ -30,7 +30,7 @@
 
             </td>
 
-            {!! BootForm::open()->action(route("users.destroy",$user))->style("display:inline") !!}
+            {!! BootForm::open()->action(route("admin.users.destroy",$user))->style("display:inline") !!}
             {!! BootForm::hidden("_method")->value('delete')!!}
             <td>
                 <input type="submit" value="Supprimer" class="del btn btn-danger"/>

@@ -64,5 +64,7 @@ class User extends Authenticatable
         }
         return $stillvote;
     }
+    
+
 
 }

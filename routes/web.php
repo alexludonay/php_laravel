@@ -67,9 +67,10 @@ Route::group(array("namespace"=>"Front"), function() {
             "as"=> "resetnote",
             "uses"=>"NotesController@resetnote"
         ));
+    Route::post('search', ['as' => 'search', 'uses' => 'UsersController@search']);
 
     Route::resource("profil", "ProfilsController");
-    Route::resource("utilisateur","UsersController");
+    Route::resource("users","UsersController");
 });
 
 Route::group(['middleware' => ['web']], function(){

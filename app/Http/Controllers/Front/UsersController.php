@@ -37,12 +37,26 @@ class UsersController extends Controller
 
         if($status_create)
         {
-            return redirect(route('utilisateur.index', $status_create))->with("success", "Le compte est créé");
+            return redirect(route('users.index', $status_create))->with("success", "Le compte est créé");
         }
         else{
             return redirect()->back()->with("danger", "Une erreur est survenue, merci de bien vouloir recommencer")->withInput();
         }
 
     }
-  
+
+    public function search(Request $request)
+    {
+        $query = $request->get('query');
+
+        $users = User::where('prenom', 'LIKE', "%$query%")
+            ->orWhere('nom', 'LIKE', "%$query%")
+            ->get();
+
+        if($users->count()==0)
+        {
+            return view('front/profils/unknown', compact('users'));}
+        else{
+        return view('front/profils/index', compact('users'));}
+    }
 }

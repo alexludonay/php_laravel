@@ -19,6 +19,14 @@
                 <h1>Bienvenue sur How To Survive</h1>
                 <hr>
             </div>
+            <div class="col-sm-12 text-center">
+                <h4 class="col-sm-12 text-center texte_accueil">Rechercher un candidat :</h4>
+                    {!! Form::open(['route' => 'search']) !!}
+                    {!! Form::text('query') !!}
+                    {!! Form::submit('Rechercher') !!}
+                    {!! Form::close() !!}
+
+           </div>
             <div class="col-sm-8 col-sm-offset-2 text-center texte_accueil">
                 <p>On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par </p>
             </div>
