@@ -39,7 +39,7 @@ Route::get("deconnexion",
 
 Route::group(array("prefix"=>"admin","namespace"=>"Admin","middleware"=>array("admin")), function()
 {
-    Route::resource("users","UsersController");
+    Route::resource("users","UsersController", array("as"=>"admin"));
 });
 Route::group(array("namespace"=>"Front"), function() {
     Route::get("notes",
