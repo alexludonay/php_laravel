@@ -1,6 +1,6 @@
-@extends("front/default")
+@include("default")
 
-@section("content")
+
     <div class="row">
         <div class="col-md-8 col-md-push-2">
             <div class="box-header with-border">
@@ -24,17 +24,9 @@
         </div>
     </div>
     <div class="col-md-4 col-md-push-2">
-        <div class="box-header box-primary">
-            <div class="box-header with-border">
-                <h2 class="box-title">Date de Naissance</h2>
-            </div>
-            <div class="box-body">
-                {!! BootForm::date('Date de Naissance',"birthday")->defualtValue($user->birthday) !!}
-            </div>
-        </div>
+
         <div class="box-body">
             <input class="btn btn-primary pull-right" type="submit" value="Modifier"/>
             {!! BootForm::close() !!}
         </div>
     </div>
-@stop

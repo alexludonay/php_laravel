@@ -39,7 +39,8 @@ Route::get("deconnexion",
 
 Route::group(array("prefix"=>"admin","namespace"=>"Admin","middleware"=>array("admin")), function()
 {
-    Route::resource("users","UsersController");
+    Route::resource("users","UsersController", array("as"=>"admin"));
+    Route::post('search', ['as' => 'admin.search', 'uses' => 'UsersController@search'],array("as"=>"admin"));
 });
 Route::group(array("namespace"=>"Front"), function() {
     Route::get("notes",
@@ -67,14 +68,19 @@ Route::group(array("namespace"=>"Front"), function() {
             "as"=> "resetnote",
             "uses"=>"NotesController@resetnote"
         ));
+    Route::post('search', ['as' => 'search', 'uses' => 'UsersController@search']);
 
     Route::resource("profil", "ProfilsController");
+
     Route::resource("utilisateur","UsersController");
     Route::post("profil",
         array(
             "as" => "profil.avatar",
             "uses" => "ProfilsController@update_avatar"
     ));
+
+    Route::resource("users","UsersController");
+
 });
 
 Route::group(['middleware' => ['web']], function(){

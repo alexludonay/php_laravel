@@ -141,5 +141,19 @@ class UsersController extends Controller
         $notemoinsun = $user_update->update(array(
             'note'=>$user_update->note+1));
     }
+    public function search(Request $request)
+    {
+        $query = $request->get('query');
+
+        $users = User::where('prenom', 'LIKE', "%$query%")
+            ->orWhere('nom', 'LIKE', "%$query%")
+            ->get();
+
+        if($users->count()==0)
+        {
+            return view('front/users/index', compact('users'))->with("danger","Aucun utilisateur correspondant à votre recherche");}
+        else{
+            return view('front/users/index', compact('users'));}
+    }
 
 }

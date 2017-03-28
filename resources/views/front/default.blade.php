@@ -1,7 +1,7 @@
 <body>
 @include('front.commun.header')
 <section>
-
+@include("front.commun.alert")
 <div class="wrapper">
     <div class="content-wrapper">
         <section class="content">
@@ -14,8 +14,5 @@
 @yield("headerJS")
 
 </section>
-<footer>
-    @include("front.commun.footer")
-</footer>
 </body>
 </html>

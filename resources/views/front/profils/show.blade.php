@@ -1,5 +1,9 @@
 @include("default")
 <div class="container page_profil">
+
+    @if (Auth::check() and Auth::user()->role=="admin")
+        <a href="{{ route("admin.users.edit",$user)}}"><input class="btn btn-success pull-left" style="position: fixed;" type="submit" value="Modifier le profil de {{ $user->prenom }} "/></a>
+    @endif
     <div class="row centre_image_profil text-center">
         <img src="../img/uploads/avatar/{{ $user->avatar }}" alt="{{ $user->prenom }} {{ $user->nom }}" class="image_profil_seul">
         @if (Auth::user()->id == $user->id)
@@ -25,7 +29,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 col-md-offset-3 description">
             <h5>Nom de l'étudiant :  {{ $user->prenom }}</h5>
             <h5>Prénom de l'étudiant :  {{ $user->nom }}</h5>
             <h5>Mail de l'étudiant :  {{$user->mail }}</h5>
@@ -34,9 +38,10 @@
             <hr>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-            @if (Auth::user()->id == $user->id)
-                <a href="{!! route("profil.edit", $user->id) !!}">Modifier</a>
+            @if (Auth::check() and Auth::user()->id == $user->id)
+                <a href="{{ route("admin.users.edit",$user)}}"><input class="btn btn-primary" type="submit" value="Modifier"/></a>
             @endif
+
         </div>
     </div>
 
@@ -47,19 +52,23 @@
         </div>
 
 @if (Auth::guest())
-    <p>Veuillez vous connecter pour pouvoir laisser un commentaire</p>
+    <div class="text-center">
+        <p style="font-weight: bold">Veuillez vous connecter pour pouvoir laisser un commentaire</p>
+        <a href="{!! route("login") !!}"><input class="btn btn-primary " type="submit" value="Se connecter"/></a>
+        <a href="{!! route("users.create") !!}"><input class="btn btn-success " type="submit" value="S'inscrire"/></a>
+    </div>
 @else
 
 
 
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-4 col-md-offset-4 commentaire">
         {!! BootForm::open()->action(route("commentaires.store")) !!}
-        {!! BootForm::textarea("Commentaire","content")->placeholder("Votre commentaire : ") !!}
+        {!! BootForm::textarea("","content")->placeholder("Votre commentaire : ") !!}
         {!! BootForm::hidden("auteur")->value(Auth::user()->nom) !!}
         {!! BootForm::hidden("user_id")->value($user->id) !!}
 
 
-        <input class="btn btn-primary pull-right" type="submit" value="Commenter"/>
+        <input class="btn pull-right bouton" type="submit" value="Commenter"/>
         {!! BootForm::close() !!}
 
     </div>
