@@ -6,6 +6,12 @@
             <div class="box-header with-border">
                 <h1 class="box-title" style="margin-left: 15px;">Modification d'un utilisateur</h1>
             </div>
+            <form enctype="multipart/form-data" action="{{ route('ProfilsController@update_avatar') }}" method="POST">
+                <label for="">Update profile image</label>
+                <input type="file" name="avatar">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="submit" class="pull-right btn btn-sm btn-primary">
+            </form>
             <div class="box-body">
                 {!! BootForm::open()->action(route("users.update", array($user))) !!}
                 {!! BootForm::hidden("_method")->value("put") !!}

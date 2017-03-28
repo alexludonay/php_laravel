@@ -70,6 +70,11 @@ Route::group(array("namespace"=>"Front"), function() {
 
     Route::resource("profil", "ProfilsController");
     Route::resource("utilisateur","UsersController");
+    Route::post("profil",
+        array(
+            "as" => "profil.avatar",
+            "uses" => "ProfilsController@update_avatar"
+    ));
 });
 
 Route::group(['middleware' => ['web']], function(){

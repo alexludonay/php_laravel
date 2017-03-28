@@ -1,7 +1,16 @@
 @include("default")
 <div class="container page_profil">
     <div class="row centre_image_profil text-center">
-        <div class="col-md-12 image_profil_seul"></div>
+        <img src="../img/uploads/avatar/{{ $user->avatar }}" alt="{{ $user->prenom }} {{ $user->nom }}" class="image_profil_seul">
+        @if (Auth::user()->id == $user->id)
+            <form enctype="multipart/form-data" action="{{ route('profil.avatar') }}" method="POST">
+                <label for="">Update profile image</label>
+                <input type="file" name="avatar">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="submit" class="pull-right btn btn-sm btn-primary">
+            </form>
+        @endif
+
         <h5 style="margin-top: 290px;">Profil de {{ $user->prenom }}</h5>
     </div>
     <div class="row">
