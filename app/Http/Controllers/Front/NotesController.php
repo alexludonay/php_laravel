@@ -16,7 +16,7 @@ class NotesController extends Controller
      */
     public function index()
     {
-        $users = User::get();
+        $users = User::orderBy('note','DESC')->get();
         $c_user= Auth::user();
         return view("front/notes/index" , compact("users","c_user"));
     }
@@ -51,7 +51,6 @@ class NotesController extends Controller
         $c_user = Auth::user();
         $notemoinsun = $user_update->update(array(
             'note' => $user_update->note - 1));
-        dd($c_user);
         $vote = $c_user->vote()->create(array(
             'user_id' => $id,
             'voted_id' => $c_user->id,

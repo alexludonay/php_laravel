@@ -1,18 +1,25 @@
 
-@include('front.commun.header')
-
 
 
 @include('default')
 
-    @foreach($users as $user)
-<body>
-<div class="container classement">
+    @foreach($users as $key => $user)
+<div>{{$key+1}}</div>
+
+@if ($key==0)
+    <div class="container classement un">
+@elseif($key==1)
+    <div class="container classement deux">
+@elseif ($key==2)
+    <div class="container classement trois">
+@else
+    <div class="container classement">
+    @endif
     <div class="row notes">
         <div class="col-md-2 image">
         </div>
         <div class="col-md-6 col-sm-6 etudiant-classement">
-            <a href="#" >{{ $user->prenom }}</a>
+            <a href="{{ route("profil.show",$user->id) }}" >{{ $user->prenom }}</a>
             <h4>{{$user->nom }}</h4>
         </div>
         <div style="margin-top: 10px" class="col-md-2 col-sm-6 text-center note-classement">
@@ -27,7 +34,7 @@
 
                     @else
                 <li style="margin-top: 10px;"><a href="{{ route("notesplus",$user)}}"><i class="fa fa-angle-double-up fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="{{ route("notesplus",$user)}}"><i class="fa fa-minus" aria-hidden="true"></i></a></li>
+                <li><a href="{{ route("noteegal",$user)}}"><i class="fa fa-minus" aria-hidden="true"></i></a></li>
                 <li><a href="{{ route("notesmoins",$user)}}"><i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i></a></li>
                     @endif
                     @endif
@@ -44,6 +51,6 @@
 
 @endforeach
 
-</div>
-</body>
+
+
 
