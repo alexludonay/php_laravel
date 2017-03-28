@@ -14,8 +14,5 @@
 @yield("headerJS")
 
 </section>
-<footer>
-    @include("front.commun.footer")
-</footer>
 </body>
 </html>
