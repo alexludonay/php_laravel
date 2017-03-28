@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 col-md-offset-3 description">
             <h5>Nom de l'étudiant :  {{ $user->prenom }}</h5>
             <h5>Prénom de l'étudiant :  {{ $user->nom }}</h5>
             <h5>Mail de l'étudiant :  {{$user->mail }}</h5>
@@ -43,14 +43,14 @@
 
 
 
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-4 col-md-offset-4 commentaire">
         {!! BootForm::open()->action(route("commentaires.store")) !!}
-        {!! BootForm::textarea("Commentaire","content")->placeholder("Votre commentaire : ") !!}
+        {!! BootForm::textarea("","content")->placeholder("Votre commentaire : ") !!}
         {!! BootForm::hidden("auteur")->value(Auth::user()->nom) !!}
         {!! BootForm::hidden("user_id")->value($user->id) !!}
 
 
-        <input class="btn btn-primary pull-right" type="submit" value="Commenter"/>
+        <input class="btn pull-right bouton" type="submit" value="Commenter"/>
         {!! BootForm::close() !!}
 
     </div>
