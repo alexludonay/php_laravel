@@ -126,13 +126,12 @@ footer {
     color: #0c2a4e;
 }
 .classement {
-     margin-top: 10px;
+     margin-top: 40px;
  }
 
 /* PAGE DES NOTES */
 .notes {
     border: solid 1px;
-    margin-bottom: 5px;
     height: 100px;
 }
 .notes li {
@@ -157,7 +156,54 @@ footer {
     width: 100px;
     height: 90px;
     background: url("../img/man.png") no-repeat no-repeat;
-    margin: 3px 15px 0px 15px;
+    margin: 3px 15px 0px 10px;
+}
+.image_or {
+    width: 120px;
+    height: 90px;
+    background: url("../img/or.png") no-repeat no-repeat;
+    margin: 3px 5px 0px 15px;
+    border-right: solid 1px;
+}
+.un {
+    -webkit-box-shadow: 1px 1px 15px 1px #FFD942;
+    box-shadow: 1px 1px 15px 1px #FFD942;
+}
+.image_argent {
+    width: 120px;
+    height: 90px;
+    background: url("../img/argent.png") no-repeat no-repeat;
+    margin: 3px 5px 0px 15px;
+    border-right: solid 1px;
+}
+.deux {
+    -webkit-box-shadow: 1px 1px 15px 1px #7b7b7b;
+    box-shadow: 1px 1px 15px 1px #7b7b7b;
+}
+.image_bronze {
+    width: 120px;
+    height: 90px;
+    background: url("../img/bronze.png") no-repeat no-repeat;
+    margin: 3px 5px 0px 15px;
+    border-right: solid 1px;
+}
+.trois {
+    -webkit-box-shadow: 1px 1px 15px 1px #cd7f32;
+    box-shadow: 1px 1px 15px 1px #cd7f32;
+}
+.numero_classement {
+    height: 90px;
+    font-size: 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    margin-top: 3px;
+    padding-top: 27px;
+    border-right: solid 1px;
+}
+.titre_classement_etudiants hr {
+    width: 500px;
+    padding-bottom: 2px;
+    background-color: #1f648b;
 }
 
 /* PAGE TOUT LES PROFILS */
@@ -209,21 +255,4 @@ footer {
     height: 100px !important;
 }
 
-
-
-
-.un{
-    -webkit-box-shadow: 1px 1px 60px 10px #FFD905;
-    box-shadow: 1px 1px 60px 10px #FFD905;
-}
-
-.deux{
-    -webkit-box-shadow: 1px 1px 60px 10px #A8A8A8;
-    box-shadow: 1px 1px 60px 10px #A8A8A8;
-}
-
-.trois{
-    -webkit-box-shadow: 1px 1px 60px 10px #965A38;
-    box-shadow: 1px 1px 60px 10px #965A38;
-}
 
