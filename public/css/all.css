@@ -94,7 +94,7 @@ footer {
 
 }/* PAGE SE CONNECTER */
 .se-connecter {
-    margin-top: 120px;
+    margin-top: 18vh;
     color: #0c2a4e;
     font-size: 45px;
     font-family: 'Lato', sans-serif;
@@ -194,6 +194,22 @@ footer {
     border-radius: 20px;
 }
 
+.description a {
+    text-decoration: none;
+    color: #0c2a4e;
+}
+.description a:hover {
+    color: #FF0008;
+}
+.commentaire {
+    margin-top: 40px;
+}
+#content.form-control {
+    width: 533px !important;
+    height: 100px !important;
+}
+
+
 
 
 .un{
@@ -210,3 +226,4 @@ footer {
     -webkit-box-shadow: 1px 1px 60px 10px #965A38;
     box-shadow: 1px 1px 60px 10px #965A38;
 }
+
