@@ -39,7 +39,7 @@ class CommentairesController extends Controller
         $this->validate($request, Commentaire::$rules["create"]);
         $status_create = Commentaire::create($input);
         if($status_create){
-            return redirect(route('profil.index', $status_create))->with("success", "le commentaire a été ajouté.");
+            return redirect()->back()->with("success", "le commentaire a été ajouté.");
         }
         else{
             return redirect()->back()->with("danger", "Une erreur est survenue")->withInput();
@@ -83,7 +83,7 @@ class CommentairesController extends Controller
         $this->validate($request, Commentaire::$rules["update"]);
         $status_create = $commentaire_update->update($input);
         if($status_create){
-            return redirect(route('profil.index', $status_create))->with("success", "le commentaire a été modifié.");
+            return redirect()->with("success", "le commentaire a été modifié.");
         }
         else{
             return redirect()->back()->with("danger", "Une erreur est survenue")->withInput();
