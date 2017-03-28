@@ -1,45 +1,22 @@
-<!DOCTYPE html>
-@extends("front/default")
+@include('default')
 
-@section("content")
-    <div class="col-md-12 col-lg-12 col-sm-12">
-    <div class="container">
-    <table class="table table-striped table-bordered">
-        <thead>
-        <tr>
-            <th>modifier</th>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>commentaire</th>
+<h4 class="col-sm-12 text-center titre_accueil">Rechercher un candidat :</h4>
+<div class="text-center">
+{!! Form::open(['route' => 'admin.search']) !!}
+{!! Form::text('query') !!}
+{!! Form::submit('Rechercher') !!}
+{!! Form::close() !!}
+</div>
+@foreach($users as $user)
+    <div class="col-md-6 col-sm-12 col-lg-4  text-center profil-utilisateurs">
+        <div class="image_profil center-block"></div>
+        <a href="{!! route("profil.show", $user->id) !!}">{{ $user->prenom }}</a>
+        <h4>{{ $user->nom }}</h4>
+        <p>Note : {{ $user->note }}</p>
+        <a href="{!! route("profil.show", $user->id) !!}"><input class="btn btn-default center-block" type="submit" value="Voir le Profil"/></a>
+            <a href="{{ route("admin.users.edit",$user)}}"><input class="btn btn-primary" type="submit" value="Modifier"/></a>
+            <a href="{{ route("admin.users.destroy",$user)}}"> <input type="submit" value="Supprimer" class="del btn btn-danger"/></a>
 
-        </tr>
+        </div>
 
-        <tbody>
-        <tr>
-
-        @foreach($users as $user)
-                <td><a href="{{ route("admin.users.edit",$user)}}"><input type="button" value="Modifier" class="btn-primary"/></a></td>
-           <td> {{$user->nom}} </td>
-                <td>{{$user->prenom}} </td>
-
-            @foreach($user->commentaires as $commentaire)
-                <td> {{$commentaire->content}} </td>
-            @endforeach
-            <td></td>
-            <td>
-
-            </td>
-
-            {!! BootForm::open()->action(route("admin.users.destroy",$user))->style("display:inline") !!}
-            {!! BootForm::hidden("_method")->value('delete')!!}
-            <td>
-                <input type="submit" value="Supprimer" class="del btn btn-danger"/>
-            </td>
-            {!! BootForm::close() !!}
-        </tr>
-
-        @endforeach </tbody>
-    </table>
-    </div>
-    </div>
-    @stop
+@endforeach

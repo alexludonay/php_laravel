@@ -1,6 +1,4 @@
-@include('front.commun.alert')
-<header>
-
+<header style="height: 75px;">
     <nav class="navbar navbar-fixed-top" style="padding-top: 5px; margin-top: 13px; margin-right: 7px;">
         <div class="container-fluid hov">
             <div class="navbar-header">
@@ -18,6 +16,7 @@
                     @if (Auth::check() and Auth::user()->role=='admin')
                     <li><a style="color: #eceff1;" href="{!! route("admin.users.index") !!}" class="hov">Administrateurs</a></li>
                     @endif
+                    <li><a style="color: #eceff1;" href="{!! route("profil.index") !!}" class="hov">Les candidats</a></li>
                     @if (Auth::check())
                     <li><a style="color: #eceff1;" href="{!! route("profil.show", Auth::user()->id) !!}" class="hov">Profil</a></li>
                         @endif
@@ -32,3 +31,4 @@
         </div>
     </nav>
 </header>
+@include('front.commun.alert')

@@ -17,6 +17,7 @@
                     @if (Auth::check() and Auth::user()->role=='admin')
                         <li><a style="color: #eceff1;" href="{!! route("admin.users.index") !!}" class="hov">Administrateurs</a></li>
                     @endif
+                        <li><a style="color: #eceff1;" href="{!! route("profil.index") !!}" class="hov">Les candidats</a></li>
                     @if (Auth::check())
                         <li><a style="color: #eceff1;" href="{!! route("profil.show", Auth::user()->id) !!}" class="hov">Profil</a></li>
                     @endif
