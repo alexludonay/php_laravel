@@ -182,6 +182,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Intervention\Image\ImageServiceProvider::class,
+
     ],
 
     /*
@@ -234,7 +236,8 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'BootForm' => AdamWathan\BootForms\Facades\BootForm::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'cURL' => 'anlutro\cURL\Laravel\cURL'
+        'cURL' => 'anlutro\cURL\Laravel\cURL',
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

@@ -71,6 +71,14 @@ Route::group(array("namespace"=>"Front"), function() {
     Route::post('search', ['as' => 'search', 'uses' => 'UsersController@search']);
 
     Route::resource("profil", "ProfilsController");
+
+    Route::resource("utilisateur","UsersController");
+    Route::post("profil",
+        array(
+            "as" => "profil.avatar",
+            "uses" => "ProfilsController@update_avatar"
+    ));
+
     Route::resource("users","UsersController");
     Route::resource("stats","StatsController");
 });

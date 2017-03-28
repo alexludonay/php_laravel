@@ -18,6 +18,7 @@ class CreateUtilisateursTable extends Migration
             $table->increments('id');
             $table->string("email");
             $table->string("nom");
+            $table->string("avatar")->default("default.jpg");
             $table->string("prenom");
             $table->string("password");
             $table->string("role")->default("studient");
