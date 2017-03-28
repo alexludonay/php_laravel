@@ -16,7 +16,27 @@ class UsersController extends Controller
     {
         //
     }
+    public function update(Request $request, $id)
+    {
+        $input = $request->all();
 
+        if ($input["password"]== "")
+        {
+            unset($input["password"]);
+            unset($input["password_confirmation"]);
+        }
+        $user_update=User::findOrFail($id);
+        $this->validate($request,User::$rules["update"]);
+        $status_create = $user_update->update($input);
+
+        if($status_create)
+        {
+            return redirect(route('users.index', $user_update))->with("success", "L'utilisateur à été modifié");
+        }
+        else{
+            return redirect()->back()->with("danger", "Une erreur est survenue, merci de bien vouloir recommencer")->withInput();
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -25,6 +45,11 @@ class UsersController extends Controller
     public function create()
     {
         return view("front/users/create");
+    }
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
+        return view("front/users/edit",compact("user"));
     }
 
     public function store(Request $request)

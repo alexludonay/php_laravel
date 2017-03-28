@@ -72,6 +72,7 @@ Route::group(array("namespace"=>"Front"), function() {
 
     Route::resource("profil", "ProfilsController");
     Route::resource("users","UsersController");
+    Route::resource("stats","StatsController");
 });
 
 Route::group(['middleware' => ['web']], function(){

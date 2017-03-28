@@ -109,6 +109,7 @@ class UsersController extends Controller
             return redirect(route('users.index', $user_update))->with("success", "L'utilisateur à été modifié");
         }
         else{
+            dd("lp");
             return redirect()->back()->with("danger", "Une erreur est survenue, merci de bien vouloir recommencer")->withInput();
         }
     }
