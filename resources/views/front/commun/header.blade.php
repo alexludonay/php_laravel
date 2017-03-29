@@ -1,5 +1,4 @@
 <header>
-    @include('front.commun.alert')
     <nav class="navbar navbar-inverse  ma-navbar">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -32,3 +31,4 @@
         </div>
     </nav>
 </header>
+@include('front.commun.alert')

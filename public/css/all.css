@@ -66,6 +66,17 @@ footer {
     font-size: 20px;
     margin-top: 7vh;
 }
+#form_recherche {
+    margin-left: 50px;
+    display: flex;
+    width: 100%;
+}
+button, input, select, textarea {
+    height: 35px !important;
+}
+#espace_recherche {
+    width: 350px;
+}
 .bordure2 {
     padding: 7px;
     border-bottom: solid 1px;
