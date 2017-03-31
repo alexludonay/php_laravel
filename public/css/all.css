@@ -168,7 +168,6 @@ button, input, select, textarea {
 .image {
     width: 100px;
     height: 90px;
-    background: url("../img/man.png") no-repeat no-repeat;
     margin: 3px 15px 0px 10px;
 }
 .image_or {

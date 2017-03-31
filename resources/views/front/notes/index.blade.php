@@ -16,7 +16,7 @@
                 {{$key+1}}
             </div>
         <div class="col-md-2 image_or"></div>
-        <div class="col-md-2 image"></div>
+            <img src="img/uploads/avatar/{{ $user->avatar }}" alt="{{ $user->prenom }} {{ $user->nom }}" class="col-md-2 image">
         <div class="col-md-4 col-sm-6 etudiant-classement">
 
 
@@ -27,7 +27,7 @@
                 {{$key+1}}
             </div>
         <div class="col-md-2 image_argent"></div>
-        <div class="col-md-2 image"></div>
+            <img src="img/uploads/avatar/{{ $user->avatar }}" alt="{{ $user->prenom }} {{ $user->nom }}" class="col-md-2 image">
         <div class="col-md-4 col-sm-6 etudiant-classement">
 
 
@@ -38,7 +38,7 @@
                 {{$key+1}}
             </div>
         <div class="col-md-2 image_bronze"></div>
-        <div class="col-md-2 image"></div>
+            <img src="img/uploads/avatar/{{ $user->avatar }}" alt="{{ $user->prenom }} {{ $user->nom }}" class="col-md-2 image">
         <div class="col-md-4 col-sm-6 etudiant-classement">
 
 @else
@@ -47,7 +47,7 @@
             <div class="col-md-1 text-center numero_classement">
                 {{$key+1}}
             </div>
-        <div class="col-md-2 image"></div>
+            <img src="img/uploads/avatar/{{ $user->avatar }}" alt="{{ $user->prenom }} {{ $user->nom }}" class="col-md-2 image">
         <div class="col-md-5 col-sm-6 etudiant-classement">
 
     @endif
