@@ -1,9 +1,7 @@
 @include("default")
 <div class="container page_profil">
 
-    @if (Auth::check() and Auth::user()->role=="admin")
-        <a href="{{ route("admin.users.edit",$user)}}"><input class="btn btn-success pull-left" style="position: fixed;" type="submit" value="Modifier le profil de {{ $user->prenom }} "/></a>
-    @endif
+
     <div class="row centre_image_profil text-center">
         <img src="../img/uploads/avatar/{{ $user->avatar }}" alt="{{ $user->prenom }} {{ $user->nom }}" class="image_profil_seul">
         @if (Auth::check() and Auth::user()->id == $user->id)
@@ -14,7 +12,6 @@
                 <input type="submit" class="pull-right btn btn-sm btn-primary">
             </form>
         @endif
-
         <h5 style="margin-top: 290px;">Profil de {{ $user->prenom }}</h5>
     </div>
     <div class="row">
@@ -37,8 +34,9 @@
             <h4>Description :</h4>
             <hr>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            @if (Auth::check() and Auth::user()->id == $user->id)
+            @if (Auth::check() and Auth::user()->role=="admin")
+                <a href="{{ route("admin.users.edit",$user)}}"><input class="btn btn-success text-center" type="submit" value="Modifier le profil de {{ $user->prenom }} "/></a>
+            @elseif (Auth::check() and Auth::user()->id == $user->id)
                 <a href="{{ route("users.edit",$user)}}"><input class="btn btn-primary" type="submit" value="Modifier"/></a>
             @endif
 

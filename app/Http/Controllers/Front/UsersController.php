@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -28,10 +29,10 @@ class UsersController extends Controller
         $user_update=User::findOrFail($id);
         $this->validate($request,User::$rules["update"]);
         $status_create = $user_update->update($input);
-
+        $c_user= Auth::user()->id;
         if($status_create)
         {
-            return redirect(route('users.index', $user_update))->with("success", "L'utilisateur à été modifié");
+            return redirect(route('profil.show',$c_user))->with("success", "L'utilisateur à été modifié");
         }
         else{
             return redirect()->back()->with("danger", "Une erreur est survenue, merci de bien vouloir recommencer")->withInput();
@@ -62,7 +63,7 @@ class UsersController extends Controller
 
         if($status_create)
         {
-            return redirect(route('users.index', $status_create))->with("success", "Le compte est créé");
+            return redirect(route('login'))->with("success", "Le compte est créé");
         }
         else{
             return redirect()->back()->with("danger", "Une erreur est survenue, merci de bien vouloir recommencer")->withInput();

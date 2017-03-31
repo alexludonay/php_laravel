@@ -46,7 +46,7 @@ class UsersController extends Controller
         $status_create = User::create($input);
 
 
-
+        
         if($status_create)
         {
             return redirect(route('users.show', $status_create))->with("succes", "Le compte est créé");
@@ -77,7 +77,8 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view("front/users/edit",compact("user"));
+        return view("back/users/edit",compact("user"));
+
     }
 
     /**
@@ -102,14 +103,11 @@ class UsersController extends Controller
         $status_create = $user_update->update($input);
 
 
-
-
         if($status_create)
         {
-            return redirect(route('users.index', $user_update))->with("success", "L'utilisateur à été modifié");
+            return redirect(route('admin.users.index', $user_update))->with("success", "L'utilisateur à été modifié");
         }
         else{
-            dd("lp");
             return redirect()->back()->with("danger", "Une erreur est survenue, merci de bien vouloir recommencer")->withInput();
         }
     }

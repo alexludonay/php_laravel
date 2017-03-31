@@ -27,7 +27,7 @@
                    <input style="background-color: #3e62e4" type="submit" class="btn btn-primary btn-block btn-flat" value="Se connecter"/>
                </div>
                <div class="col-sm-12 text-center pas-inscrit">
-                   <a href="#">Pas encore de compte ? Inscrivez-vous</a>
+                   <a href="{{route("users.create")}}">Pas encore de compte ? Inscrivez-vous</a>
                </div>
            </div>
        </div>
