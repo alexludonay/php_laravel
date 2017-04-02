@@ -6,7 +6,7 @@
                 <hr>
             </div>
             <div class="col-sm-8 col-sm-offset-2 text-center texte_accueil">
-                <p>On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.</p>
+                <p>How To Survive, est un projet étudiant. Le principe, répertorier l'ensemble des élèves d'une classe, et de proposer un classement par vote. Chaque étudiant peut voter pour celui ou celle qui veut se voir élire "meilleur élève de la classe", ou "pire élève"... <br>Cela à pour but de mettre un peu de concurence et d'enjeu, tout en restant dans une bonne ambiance.</p>
             </div>
             <div class="col-sm-6 col-sm-offset-3 text-center rechercher">
                 <form method="POST" id="form_recherche"  action="{{route('search')}}">
